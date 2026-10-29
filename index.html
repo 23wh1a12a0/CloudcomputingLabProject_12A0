@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud Cost Estimator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="cloud-icon">☁</span><span>CloudWise</span></div>
+    <nav><a href="#estimator">Estimator</a><a href="#how-it-works">How it works</a><a href="#about">About</a></nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">CLOUD COMPUTING PROJECT</div>
+      <h1>Estimate your cloud<br><span>cost in seconds.</span></h1>
+      <p>Plan a cloud setup by selecting a service, usage, and storage. Get a simple monthly cost estimate before deployment.</p>
+      <a class="hero-link" href="#estimator">Start estimating <span>→</span></a>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="cloud-large">☁</div>
+        <div class="server s1"><i></i><i></i><i></i></div>
+        <div class="server s2"><i></i><i></i><i></i></div>
+        <div class="server s3"><i></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <section id="estimator" class="estimator-section">
+      <div class="section-heading">
+        <div><div class="eyebrow">COST PLANNER</div><h2>Cloud cost estimator</h2></div>
+        <span class="live-pill"><span></span> Interactive demo</span>
+      </div>
+      <div class="workspace">
+        <div class="form-card">
+          <label for="provider">Cloud service provider</label>
+          <select id="provider">
+            <option value="1">AWS (sample rates)</option>
+            <option value="0.95">Microsoft Azure (sample rates)</option>
+            <option value="0.92">Google Cloud (sample rates)</option>
+          </select>
+
+          <label for="service">Compute service</label>
+          <select id="service">
+            <option value="18">Small virtual machine — $18/month</option>
+            <option value="42">General purpose VM — $42/month</option>
+            <option value="85">High performance VM — $85/month</option>
+          </select>
+
+          <div class="field-row">
+            <div><label for="hours">Usage per day (hours)</label><input id="hours" type="number" min="1" max="24" value="8" /></div>
+            <div><label for="storage">Storage (GB)</label><input id="storage" type="number" min="0" value="50" /></div>
+          </div>
+          <div class="rate-note"><span>ⓘ</span> Demo pricing: compute is scaled by hours used; storage is $0.10/GB-month.</div>
+          <button id="calculate">Calculate estimate <span>→</span></button>
+        </div>
+
+        <div class="result-card">
+          <div class="result-top"><span>ESTIMATED MONTHLY COST</span><span class="spark">✦</span></div>
+          <div class="price" id="total">$0.00 <small>/ month</small></div>
+          <p class="muted">Illustrative estimate based on your selected configuration.</p>
+          <div class="breakdown">
+            <div><span><b class="dot purple"></b>Compute</span><strong id="computeCost">$0.00</strong></div>
+            <div><span><b class="dot blue"></b>Storage</span><strong id="storageCost">$0.00</strong></div>
+          </div>
+          <div class="result-footer"><span>Selected provider</span><strong id="providerName">AWS (sample rates)</strong></div>
+          <div class="disclaimer">This is a student demonstration, not an official quote. Actual cloud prices vary by region, usage, taxes, and service tier.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="steps">
+      <div class="eyebrow">THE WORKFLOW</div><h2>How it works</h2>
+      <div class="step-grid">
+        <article><span>01</span><h3>Choose a provider</h3><p>Select a cloud platform and compute option for your scenario.</p></article>
+        <article><span>02</span><h3>Enter usage</h3><p>Set daily operating hours and the amount of storage required.</p></article>
+        <article><span>03</span><h3>Review the estimate</h3><p>See the monthly total and a simple compute-versus-storage breakdown.</p></article>
+      </div>
+    </section>
+    <section id="about" class="about"><strong>CloudWise</strong><span>A beginner-friendly cloud computing cost estimation project.</span><span>Built with HTML, CSS and JavaScript.</span></section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
